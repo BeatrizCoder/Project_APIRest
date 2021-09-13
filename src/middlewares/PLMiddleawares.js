@@ -2,6 +2,10 @@ const mongoose = require("mogoose");
 
 const PL = require("../models/PL");
 
+const cors=require("../routes/routes");
+app.use(cors());
+app.options("*", cors());
+
 const validaID = async (req, res, next) => {
   const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) {

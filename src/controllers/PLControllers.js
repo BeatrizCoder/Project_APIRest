@@ -1,13 +1,20 @@
+
 const PL = require("../models/PL");
 
 const getAll = async (req, res) => {
   try {
-    const PL = await PL.find();
-    return res.send({ PLS });
+    const PLS = await PL.find(); 
+    if (prependOnceListener.length === 0)
+      return res
+        .status(404)
+        .send({ message: "There are no registered programming languages." });
+    return res.send({ personagens });
   } catch (err) {
-    res.status(500).send({ error: err });
+    res.status(500).send({ error: err.message });
   }
 };
+
+
 
 const getById = async (req, res) => {
   const { id } = req.params;
@@ -26,9 +33,9 @@ const getById = async (req, res) => {
 };
 
 const create = async (req, res) => {
-  const { name, curiosity, image } = req.body;
+  const { name, fact, image } = req.body;
 
-  if (!name || !curiosity || !image) {
+  if (!name || !fact || !image) {
     res.status(400).send({
       message:
         "You have not submitted all the necessary information to register it ",
@@ -37,7 +44,7 @@ const create = async (req, res) => {
   }
   const newPL = await new PL({
     name,
-    curiosity,
+    fact,
     image,
   });
 
@@ -52,9 +59,9 @@ const create = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  const { name, curiosity, image } = req.body;
+  const { name, fact, image } = req.body;
 
-  if (!name || !curiosity || !image) {
+  if (!name || !fact || !image) {
     res.status(400).send({
       message:
         "You have not submitted all the necessary information to register it ",
@@ -63,7 +70,7 @@ const update = async (req, res) => {
   }
 
   res.PL.name = name;
-  res.PL.curiosity = curiosity;
+  res.PL.fact = fact;
   res.PL.image = image;
 
   try {
@@ -83,10 +90,49 @@ const del = async (req, res) => {
   }
 };
 
+const filterByname=async(req,res)={
+  const nome=req.query.nome;
+  if(!nome){
+    res.status(400).send({erro:"Parameter not received"});
+    return;
+  }
+  try{
+    const PLS=await PL.find({$regex: `${nome}}`});
+    return res.send({PLS});
+  }catch (err){
+    return res.status(500).send({error: err.message});
+  }
+};
+
+const filteaAll= async (req, res)=>{
+  let{name, fact, image}= req.query;
+  !name?(name=""):(name=name);
+  !fact?(fact=""):(fact=fact);
+  !image?(image=""):(image=image);
+
+  try{
+    const PLS=await PL.find({
+      name:{$regex:`${name}`, $options:'i'},
+      fact:{$regex:`${fact}`, $options:'i'},
+      image:{$regex:`${image}`,$options:'i'},
+    });
+    if (PLS.length===0)
+    return res.status(404).send({erro:"Programming language not found."});
+
+    return res.send({PLS});
+  }catch (err){
+    return res.status(500).send({error:err.message});
+  }
+    
+  };
+
+
 module.exports = {
   getAll,
   getById,
   create,
   update,
   del,
+  filterByname,
+ filterAll,
 };

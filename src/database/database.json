@@ -1,0 +1,28 @@
+[
+    {
+        "name":"JavaScript",
+        "fact": "JavaScript supports regular expressions in a manner similar to Perl, which provides a concise and powerful syntax for text manipulation that is more sophisticated than the built-in string functions.",
+        "image":"https://www.luiztools.com.br/wp-content/uploads/2018/09/javascript.png"
+    
+    },
+
+    {
+        "name":"Python ",
+        "fact": "The language’s name isn’t about snakes, but about the popular British comedy troupe Monty Python (from the 1970s). Guido himself is a big fan of Monty Python’s Flying Circus. Being in a rather irreverent mood, he named the project ‘Python’.",
+        "image":"https://img.olhardigital.com.br/wp-content/uploads/2020/04/20200423030657-1131x450.jpg"
+    },
+
+    {
+        "name":"Java",
+        "fact": "James Gosling was working at Sun Labs, around 1992. Gosling and his team were building a set-top box and started by “cleaning up” C++ and wound up with a new language and runtime. Thus Java or Oak came into being",
+        "image":"https://s2.glbimg.com/5Iz4ZzSACXeBMQACRQmPliuTERw=/696x390/top/smart/s2.glbimg.com/vME2Bq4OSpm6f6IE16BhcVLR98U=/695x0/s.glbimg.com/po/tt2/f/original/2014/11/14/java-logo.jpg"
+    
+    },
+
+    {
+        "name":"Swift",
+        "fact": "Swift is supposed to combine the best parts of C and Objective C without compatibility constraints and provides new features.",
+        "image":"https://miro.medium.com/max/750/1*OgeU8HPo8TFF1cZQ-4XjJw.jpeg"
+    
+    }
+]
