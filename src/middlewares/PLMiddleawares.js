@@ -1,10 +1,6 @@
-const mongoose = require("mogoose");
+const mongoose = require("mongoose");
 
 const PL = require("../models/PL");
-
-const cors=require("../routes/routes");
-app.use(cors());
-app.options("*", cors());
 
 const validaID = async (req, res, next) => {
   const { id } = req.params;
@@ -14,7 +10,7 @@ const validaID = async (req, res, next) => {
   }
 
   try {
-    const personagem = await PL.findById(id);
+    const PL = await PL.findById(id);
     if (!PL) {
       return res
         .status(404)

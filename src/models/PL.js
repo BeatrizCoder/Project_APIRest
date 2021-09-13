@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const PLSchema = new mongoose.Schema({
+const PlSchema = new mongoose.Schema({
   name: {
     type: String,
     require: true,
   },
-  curiosity: {
+  fact: {
     type: String,
     require: true,
   },
@@ -14,4 +14,4 @@ const PLSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("PL", PLSchema);
+module.exports = mongoose.model("Pl", PlSchema);

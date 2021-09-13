@@ -1,20 +1,19 @@
-
-const PL = require("../models/PL");
+const Pl = require("../models/PL");
 
 const getAll = async (req, res) => {
   try {
-    const PLS = await PL.find(); 
-    if (prependOnceListener.length === 0)
+    const PLS = await Pl.find();
+    console.log(PLS);
+    console.log(PLS.length);
+    if (PLS.length === 0)
       return res
         .status(404)
         .send({ message: "There are no registered programming languages." });
-    return res.send({ personagens });
+    return res.send({ PLS });
   } catch (err) {
     res.status(500).send({ error: err.message });
   }
 };
-
-
 
 const getById = async (req, res) => {
   const { id } = req.params;
@@ -90,42 +89,40 @@ const del = async (req, res) => {
   }
 };
 
-const filterByname=async(req,res)={
-  const nome=req.query.nome;
-  if(!nome){
-    res.status(400).send({erro:"Parameter not received"});
+const filterByname = async (req, res) => {
+  const name = req.query.name;
+  if (!name) {
+    res.status(400).send({ erro: "Parameter not received" });
     return;
   }
-  try{
-    const PLS=await PL.find({$regex: `${nome}}`});
-    return res.send({PLS});
-  }catch (err){
-    return res.status(500).send({error: err.message});
+  try {
+    const PLS = await PL.find({ $regex: `${nome}}` });
+    return res.send({ PLS });
+  } catch (err) {
+    return res.status(500).send({ error: err.message });
   }
 };
 
-const filteaAll= async (req, res)=>{
-  let{name, fact, image}= req.query;
-  !name?(name=""):(name=name);
-  !fact?(fact=""):(fact=fact);
-  !image?(image=""):(image=image);
+const filterAll = async (req, res) => {
+  let { name, fact, image } = req.query;
+  !name ? (name = "") : (name = name);
+  !fact ? (fact = "") : (fact = fact);
+  !image ? (image = "") : (image = image);
 
-  try{
-    const PLS=await PL.find({
-      name:{$regex:`${name}`, $options:'i'},
-      fact:{$regex:`${fact}`, $options:'i'},
-      image:{$regex:`${image}`,$options:'i'},
+  try {
+    const PLS = await PL.find({
+      name: { $regex: `${name}`, $options: "i" },
+      fact: { $regex: `${fact}`, $options: "i" },
+      image: { $regex: `${image}`, $options: "i" },
     });
-    if (PLS.length===0)
-    return res.status(404).send({erro:"Programming language not found."});
+    if (PLS.length === 0)
+      return res.status(404).send({ erro: "Programming language not found." });
 
-    return res.send({PLS});
-  }catch (err){
-    return res.status(500).send({error:err.message});
+    return res.send({ PLS });
+  } catch (err) {
+    return res.status(500).send({ error: err.message });
   }
-    
-  };
-
+};
 
 module.exports = {
   getAll,
@@ -134,5 +131,5 @@ module.exports = {
   update,
   del,
   filterByname,
- filterAll,
+  filterAll,
 };
