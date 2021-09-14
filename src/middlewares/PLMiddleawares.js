@@ -10,14 +10,15 @@ const validaID = async (req, res, next) => {
   }
 
   try {
-    const PL = await PL.findById(id);
-    if (!PL) {
+    const result = await PL.findById(id);
+    if (!result) {
       return res
         .status(404)
         .send({ mensagem: "The programming language was not found" });
     }
-    res.PL = PL;
+    res.result = result;
   } catch (err) {
+    console.log(`error on ValidaId.Error:${err}`);
     return res.status(500).send({ error: err });
   }
   next();

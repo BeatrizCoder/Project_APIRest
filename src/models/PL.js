@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const PlSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -12,6 +13,6 @@ const PlSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-});
+},{collection:'PL'});
 
 module.exports = mongoose.model("Pl", PlSchema);

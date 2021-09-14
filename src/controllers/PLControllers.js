@@ -18,16 +18,18 @@ const getAll = async (req, res) => {
 const getById = async (req, res) => {
   const { id } = req.params;
   try {
-    const PL = await PL.findById(id);
-    if (!PL) {
+    const result = await Pl.findById(id);
+    if (!result) {
       res
         .status(404)
         .json({ message: "The programming language was not found" });
       return;
     }
-    return res.send({ PL });
+    return res.send({ result });
   } catch (err) {
-    res.status(500).send({ error: err });
+    console.log(`error on GetById.Error:${err}`);
+  
+    res.status(500).send({ error: err.message });
   }
 };
 
@@ -41,7 +43,7 @@ const create = async (req, res) => {
     });
     return;
   }
-  const newPL = await new PL({
+  const newPL = await new Pl({
     name,
     fact,
     image,
@@ -68,24 +70,24 @@ const update = async (req, res) => {
     return;
   }
 
-  res.PL.name = name;
-  res.PL.fact = fact;
-  res.PL.image = image;
+  res.result.name = name;
+  res.result.fact = fact;
+  res.result.image = image;
 
   try {
-    await res.PL.save();
+    await res.result.save();
     res.send({ message: "Programming language successfully updated" });
   } catch (err) {
-    res.status(500).send({ error: err });
+    res.status(500).send({ error: err.message });
   }
 };
 
 const del = async (req, res) => {
   try {
-    await res.PL.remove();
+    await res.result.remove();
     return res.send({ message: "Programming language successfully removed" });
   } catch (err) {
-    res.status(500).send({ error: err });
+    res.status(500).send({ error: err.message });
   }
 };
 
@@ -97,7 +99,7 @@ const filterByname = async (req, res) => {
   }
   try {
     const PLS = await PL.find({ $regex: `${nome}}` });
-    return res.send({ PLS });
+    return res.send({ result });
   } catch (err) {
     return res.status(500).send({ error: err.message });
   }
@@ -118,7 +120,7 @@ const filterAll = async (req, res) => {
     if (PLS.length === 0)
       return res.status(404).send({ erro: "Programming language not found." });
 
-    return res.send({ PLS });
+    return res.send({ result });
   } catch (err) {
     return res.status(500).send({ error: err.message });
   }
