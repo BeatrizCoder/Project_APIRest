@@ -1,6 +1,6 @@
 const routes = require("express").Router();
 
-const PlController = require("../controllers/PlControllers");
+const PlController = require("../controllers/PLControllers");
 const PlMiddlewares = require("../middlewares/PlMiddleawares");
 
 routes.get("/Pl", PlController.getAll);
