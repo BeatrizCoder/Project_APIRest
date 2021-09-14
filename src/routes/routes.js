@@ -1,15 +1,15 @@
 const routes = require("express").Router();
 
-const PLController = require("../controllers/PLControllers");
-const PLMiddlewares = require("../middlewares/PLMiddleawares");
+const PlController = require("../controllers/PlControllers");
+const PlMiddlewares = require("../middlewares/PlMiddleawares");
 
-routes.get("/PL", PLController.getAll);
-routes.get("/PL/:id", PLMiddlewares.validaID, PLController.getById);
-routes.post("/PL", PLController.create);
-routes.put("/PL/:id", PLMiddlewares.validaID, PLController.update);
-routes.delete("/PL/:id", PLMiddlewares.validaID, PLController.del);
+routes.get("/Pl", PlController.getAll);
+routes.get("/Pl/:id", PlMiddlewares.validaID, PlController.getById);
+routes.post("/Pl", PlController.create);
+routes.put("/Pl/:id", PlMiddlewares.validaID, PlController.update);
+routes.delete("/Pl/:id", PlMiddlewares.validaID, PlController.del);
 
-routes.get("/filterByname", PLController.filterByname);
-routes.get("/filterAll", PLController.filterAll);
+routes.get("/filterByname", PlController.filterByname);
+routes.get("/filterAll", PlController.filterAll);
 
 module.exports = routes;

@@ -7,6 +7,9 @@
 
 Para utilizar o projeto faça o dowload do arquivo zip, ou faça o clone em seu computador utilizando o Git. Execute o comando `npm i` dentro da pasta do projeto em seu computador(a pasta que contém o arquivo package.json), para baixar as dependencias do projeto.
 
+## Sobre o código
+A abreviacao "PL" e "Pl" significa Programming Language e "PLS" Programming Languages no plural.
+
 ## Executando o projeto
 
 *Essa API utiliza o mongodb como banco de dados e o mongoose como ODM, então antes de testar a API certifique se você possui o MongoDb instalado em seu computador(https://www.mongodb.com/try/download/community).*
@@ -31,7 +34,7 @@ Você pode utilizar as ferramentas:
 * Thunder Client (plugin no vsCode)
 
 Exemplos de URLs: 
-* Essa é a URL de teste padrão: http://localhost:3000/PL
+* Essa é a URL de teste padrão: http://localhost:3000/Pl
 * Para buscar por ID, Editar ou Apagar, insira o ID na URL: http://localhost:3000/personagens/5
 * Para fazer uma busca com query string, esse é um exemplo de URL: http://localhost:3000/personagens/filter?identidade=Spider-Man
 
@@ -47,4 +50,4 @@ Essa é a estrutura JSON para fazer o POST e o PUT:
 }
 ```
 
-<Agradeco por utilizar minha API. Seja sempre bem vindo!>
+Agradeco por utilizar minha API. Seja sempre bem vindo!

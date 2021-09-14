@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PL = require("../models/PL");
+const Pl = require("../models/Pl");
 
 const validaID = async (req, res, next) => {
   const { id } = req.params;
@@ -10,7 +10,7 @@ const validaID = async (req, res, next) => {
   }
 
   try {
-    const result = await PL.findById(id);
+    const result = await Pl.findById(id);
     if (!result) {
       return res
         .status(404)

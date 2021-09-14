@@ -1,15 +1,15 @@
-const Pl = require("../models/PL");
+const Pl = require("../models/Pl");
 
 const getAll = async (req, res) => {
   try {
-    const PLS = await Pl.find();
-    console.log(PLS);
-    console.log(PLS.length);
-    if (PLS.length === 0)
+    const Pls = await Pl.find();
+    console.log(Pls);
+    console.log(Pls.length);
+    if (Pls.length === 0)
       return res
         .status(404)
         .send({ message: "There are no registered programming languages." });
-    return res.send({ PLS });
+    return res.send({ Pls });
   } catch (err) {
     res.status(500).send({ error: err.message });
   }
@@ -43,17 +43,17 @@ const create = async (req, res) => {
     });
     return;
   }
-  const newPL = await new Pl({
+  const newPl = await new Pl({
     name,
     fact,
     image,
   });
 
   try {
-    await newPL.save();
+    await newPl.save();
     return res
       .status(201)
-      .send({ message: "Programming language successfully created", newPL });
+      .send({ message: "Programming language successfully created", newPl });
   } catch (err) {
     res.status(500).send({ erro: err });
   }
@@ -98,8 +98,8 @@ const filterByname = async (req, res) => {
     return;
   }
   try {
-    const PLS = await PL.find({ $regex: `${nome}}` });
-    return res.send({ result });
+    const Pls = await Pl.find({ $regex: `${nome}}` });
+    return res.send({ Pls });
   } catch (err) {
     return res.status(500).send({ error: err.message });
   }
@@ -112,15 +112,15 @@ const filterAll = async (req, res) => {
   !image ? (image = "") : (image = image);
 
   try {
-    const PLS = await PL.find({
+    const Pls = await Pl.find({
       name: { $regex: `${name}`, $options: "i" },
       fact: { $regex: `${fact}`, $options: "i" },
       image: { $regex: `${image}`, $options: "i" },
     });
-    if (PLS.length === 0)
+    if (Pls.length === 0)
       return res.status(404).send({ erro: "Programming language not found." });
 
-    return res.send({ result });
+    return res.send({ Pls});
   } catch (err) {
     return res.status(500).send({ error: err.message });
   }
