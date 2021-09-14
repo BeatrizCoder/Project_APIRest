@@ -24,5 +24,5 @@ app.options("*", cors());
 app.use(routes);
 
 app.listen(port, () =>
-  console.info(`Server running on http://localhost:${port}`)
+  console.info(`Server running on http://localhost:${port}/Pl`)
 );
