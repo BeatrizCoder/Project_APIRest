@@ -1,7 +1,7 @@
 const routes = require("express").Router();
 
 const PlController = require("../controllers/PLControllers");
-const PlMiddlewares = require("../middlewares/PlMiddleawares");
+const PlMiddlewares = require("../middlewares/PLMiddleawares");
 
 routes.get("/Pl", PlController.getAll);
 routes.get("/Pl/:id", PlMiddlewares.validaID, PlController.getById);
