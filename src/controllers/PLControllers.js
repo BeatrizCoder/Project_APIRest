@@ -28,7 +28,7 @@ const getById = async (req, res) => {
     return res.send({ result });
   } catch (err) {
     console.log(`error on GetById.Error:${err}`);
-  
+
     res.status(500).send({ error: err.message });
   }
 };
