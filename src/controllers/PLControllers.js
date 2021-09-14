@@ -1,4 +1,4 @@
-const Pl = require("../models/Pl");
+const Pl = require("../models/PL");
 
 const getAll = async (req, res) => {
   try {
