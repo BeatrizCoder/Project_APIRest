@@ -1,9 +1,13 @@
 const Pl = require("../models/Pl");
 
+const index = (req, res) => {
+  res.send({ message: "Endpoint was not found" });
+};
+
 const getAll = async (req, res) => {
   try {
     const Pls = await Pl.find();
-  
+
     if (Pls.length === 0)
       return res
         .status(404)
@@ -26,7 +30,6 @@ const getById = async (req, res) => {
     }
     return res.send({ result });
   } catch (err) {
-  
     res.status(500).send({ error: err.message });
   }
 };
@@ -96,7 +99,7 @@ const filterByname = async (req, res) => {
     return;
   }
   try {
-    const Pls = await Pl.find({ name: {$regex: `${name}`,$options: "i"  }});
+    const Pls = await Pl.find({ name: { $regex: `${name}`, $options: "i" } });
     return res.send({ Pls });
   } catch (err) {
     return res.status(500).send({ error: err.message });
@@ -118,7 +121,7 @@ const filterAll = async (req, res) => {
     if (Pls.length === 0)
       return res.status(404).send({ erro: "Programming language not found." });
 
-    return res.send({ Pls});
+    return res.send({ Pls });
   } catch (err) {
     return res.status(500).send({ error: err.message });
   }
@@ -132,4 +135,5 @@ module.exports = {
   del,
   filterByname,
   filterAll,
+  index,
 };

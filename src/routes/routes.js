@@ -3,6 +3,7 @@ const routes = require("express").Router();
 const PlController = require("../controllers/PlControllers");
 const PlMiddlewares = require("../middlewares/PlMiddleawares");
 
+routes.get("/", PlController.index);
 routes.get("/Pl", PlController.getAll);
 routes.get("/Pl/:id", PlMiddlewares.validaID, PlController.getById);
 routes.post("/Pl", PlController.create);

@@ -12,9 +12,11 @@ A abreviacao "PL" e "Pl" significa Programming Language e "PLS" Programming Lang
 
 ## Executando o projeto
 
-*Essa API utiliza o mongodb como banco de dados e o mongoose como ODM, então antes de testar a API certifique se você possui o MongoDb instalado em seu computador(https://www.mongodb.com/try/download/community).*
+*Essa API utiliza o mongodb como banco de dados e o mongoose como ODM, então antes de testar a API certifique se você possui o MongoDb instalado em seu computador
+O link a seguir para instalar o MongoDb:
+https://www.mongodb.com/try/download/community.*
 
-Além disso, você precisa criar o arquivo .env com a url do seu banco, *utilize o arquivo .env.exemple para criar o seu*. Esse é um exemplo de string de conexão com o banco de dados: mongodb://localhost:27017/db_marvel.
+Além disso, você precisa criar o arquivo .env com a url do seu banco, *utilize o arquivo .env.exemple para criar o seu*. Esse é um exemplo de string de conexão com o banco de dados: mongodb://localhost:27017/PL_DB.
 
 Agora você pode executar o projeto: 
 * Para executar o projeto com o nodemon, digite no terminal: 
@@ -25,7 +27,7 @@ npm run dev
 ```bash
 npm start
 ```
-## Testando a API
+## Como testar API?
 
 Você pode utilizar as ferramentas:
 
@@ -35,10 +37,8 @@ Você pode utilizar as ferramentas:
 
 Exemplos de URLs: 
 * Essa é a URL de teste padrão: http://localhost:3000/Pl
-* Para buscar por ID, Editar ou Apagar, insira o ID na URL: http://localhost:3000/personagens/5
-* Para fazer uma busca com query string, esse é um exemplo de URL: http://localhost:3000/personagens/filter?identidade=Spider-Man
 
-> Nesse site você consegue encontrar informações de personagens para testar os end-points: https://marvel.fandom.com/pt-br/wiki/Categoria:Personagens
+* Para buscar por ID, Editar ou Apagar, insira o ID na URL: http://localhost:3000/Pl/id
 
 Essa é a estrutura JSON para fazer o POST e o PUT:
 

@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const Pl = require("../models/Pl");
 
+
 const validaID = async (req, res, next) => {
   const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) {
