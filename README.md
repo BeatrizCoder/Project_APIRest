@@ -1,53 +1,54 @@
-# API Linguagens de Programação-NodeJs
+
+
+# API Programming Languages-NodeJs
 
 
 <img src="http://appflower.com/wp-content/uploads/2020/02/top-programming-languages.png;" />
 
-> API criada para estudos de  conceitos em back-end, utilizando a linguagem de programação JavaScript e o banco de dados MongoDB. Nessa API eu apresento um CRUD completo de seis principais Linguagensde Programação atuais.
+> This was API created for back-end concept studies, using the JavaScript as programming language and the MongoDB as database. I present a complete CRUD in this API of the top five most popular Programming Languages used in 2021.
 
-Para utilizar o projeto faça o dowload do arquivo zip, ou faça o clone em seu computador utilizando o Git. Execute o comando `npm i` dentro da pasta do projeto em seu computador(a pasta que contém o arquivo package.json), para baixar as dependencias do projeto.
+You will be able to use tis project downloading the zip file, or cloning it on your computer using Git. Run the `npm i` command inside the project folder on your computer (the folder containing the package.json file),  and the `npm i ` command will allow to dowload the  project´s dependencies.
 
-## Sobre o código
-A abreviacao "PL" e "Pl" significa Programming Language e "PLS" Programming Languages no plural.
+## Code specifciations
+The abbreviation "PL" and "Pl" means Programming Language and "PLS" Programming Languages ​​in the plural.
 
-## Executando o projeto
+## Running the project
 
-*Essa API utiliza o mongodb como banco de dados e o mongoose como ODM, então antes de testar a API certifique se você possui o MongoDb instalado em seu computador
-O link a seguir para instalar o MongoDb:
+*This API uses mongodb as database and mongoose as ORM, so before testing the API make sure you have MongoDb installed on your computer
+The following link to install MongoDb:
 https://www.mongodb.com/try/download/community.*
 
-Além disso, você precisa criar o arquivo .env com a url do seu banco, *utilize o arquivo .env.exemple para criar o seu*. Esse é um exemplo de string de conexão com o banco de dados: mongodb://localhost:27017/PL_DB.
+Also, you need to create the .env file with your bank's url, *use the .env.exemple file to create yours*. This is an example database connection string: mongodb://localhost:27017/PL_DB.
 
-Agora você pode executar o projeto: 
-* Para executar o projeto com o nodemon, digite no terminal: 
+How to run the project:
+* To run the project with nodemon, type in the terminal:
 ```bash
 npm run dev
 ```
-* Para executar o projeto com o node, digite no terminal: 
+* Running the project with node, type in the terminal:
 ```bash
 npm start
 ```
-## Como testar API?
+## How to test API?
 
-Você pode utilizar as ferramentas:
+You can use the tools below:
 
 * Postman - https://www.postman.com/
 * Insomnia-https://insomnia.rest/download
-* Thunder Client (plugin no vsCode)
+* Thunder Client (vsCode plugin)
 
-Exemplos de URLs: 
-* Essa é a URL de teste padrão: http://localhost:3000/Pl
+Examples of URLs:
+* This is the default test URL: http://localhost:3000/Pl
 
-* Para buscar por ID, Editar ou Apagar, insira o ID na URL: http://localhost:3000/Pl/id
+* To search by ID, Edit or Delete, enter the ID in the URL: http://localhost:3000/Pl/id
 
-Essa é a estrutura JSON para fazer o POST e o PUT:
+This is the JSON structure for doing POST and PUT:
 
 ```json
 {
+
     "name": "Python ",
     "fact": "The language’s name isn’t about snakes, but about the popular British comedy troupe Monty Python (from the 1970s). Guido himself is a big fan of Monty Python’s Flying Circus. Being in a rather irreverent mood, he named the project ‘Python’.",
     "image": "https://img.olhardigital.com.br/wp-content/uploads/2020/04/20200423030657-1131x450.jpg"
 }
 ```
-
-Agradeco por utilizar minha API. Seja sempre bem vindo!
