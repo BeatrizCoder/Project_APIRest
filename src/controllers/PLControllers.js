@@ -1,4 +1,4 @@
-const Pl = require("../models/Pl");
+const Pl = require("../models/PL");
 
 const index = (req, res) => {
   res.send({ message: "Endpoint was not found" });

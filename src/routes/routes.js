@@ -1,7 +1,7 @@
 const routes = require("express").Router();
 
-const PlController = require("../controllers/PlControllers");
-const PlMiddlewares = require("../middlewares/PlMiddleawares");
+const PlController = require("../controllers/PLControllers");
+const PlMiddlewares = require("../middlewares/PLMiddleawares");
 
 routes.get("/", PlController.index);
 routes.get("/Pl", PlController.getAll);

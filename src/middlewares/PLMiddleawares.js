@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Pl = require("../models/Pl");
+const Pl = require("../models/PL");
 
 
 const validaID = async (req, res, next) => {
