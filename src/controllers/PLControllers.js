@@ -3,8 +3,7 @@ const Pl = require("../models/Pl");
 const getAll = async (req, res) => {
   try {
     const Pls = await Pl.find();
-    console.log(Pls);
-    console.log(Pls.length);
+  
     if (Pls.length === 0)
       return res
         .status(404)
@@ -27,8 +26,7 @@ const getById = async (req, res) => {
     }
     return res.send({ result });
   } catch (err) {
-    console.log(`error on GetById.Error:${err}`);
-
+  
     res.status(500).send({ error: err.message });
   }
 };
@@ -98,7 +96,7 @@ const filterByname = async (req, res) => {
     return;
   }
   try {
-    const Pls = await Pl.find({ $regex: `${nome}}` });
+    const Pls = await Pl.find({ name: {$regex: `${name}`,$options: "i"  }});
     return res.send({ Pls });
   } catch (err) {
     return res.status(500).send({ error: err.message });

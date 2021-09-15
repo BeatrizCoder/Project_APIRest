@@ -15,7 +15,7 @@ const PlSchema = new mongoose.Schema(
       require: true,
     },
   },
-  { collection: "PL" }
+  { collection: "Pls" }
 );
 
 module.exports = mongoose.model("Pl", PlSchema);

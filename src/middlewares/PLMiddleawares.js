@@ -24,3 +24,4 @@ const validaID = async (req, res, next) => {
   next();
 };
 module.exports = { validaID };
+
