@@ -1,7 +1,7 @@
 
 # API- Top 5 most popular Programming Languages in 2021-NodeJs
 
-<divstyle="text-align:center"><imgsrc="http://appflower.com/wp-content/uploads/2020/02/top-programming-languages.png;" /></div>
+<img src="http://appflower.com/wp-content/uploads/2020/02/top-programming-languages.png;" />
 
 > This was API created for back-end concept studies, using the JavaScript as programming language and the MongoDB as database. I present a complete CRUD in this API of the top five most popular Programming Languages in 2021.
 
@@ -13,11 +13,13 @@ The abbreviation "PL" and "Pl" means Programming Language and "PLS" Programming 
 
 ## Running the project
 
-*This API uses mongodb as database and mongoose as ORM, so before testing the API make sure you have MongoDb installed on your computer
+*This API uses mongodb as database and mongoose as ORM. 
+
+Importante note: You will only be able o test the API completly if you have MongoDb installed on your computer
 The following link to install MongoDb:
 <https://www.mongodb.com/try/download/community>
 
-Also, you need to create the .env file with your bank's url, *use the .env.exemple file to create yours*. This is an example database connection string: mongodb://localhost:27017/PL_DB.
+Also, you need to create the .env file with your database´s url, *use the .env.exemple file to create yours*. This is an example database connection string: mongodb://localhost:27017/PL_DB.
 
 How to run the project?
 
