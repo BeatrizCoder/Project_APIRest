@@ -23,11 +23,13 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/C_Sharp_wordmark.svg/1200px-C_Sharp_wordmark.svg.png",
   }
 
-  /*Available to the user test te PUT and POST
-   {
-    "name": "Swift",
-    "fact": "Swift is supposed to combine the best parts of C and Objective C without compatibility constraints and provides new features.",
-    "image": "https://miro.medium.com/max/750/1*OgeU8HPo8TFF1cZQ-4XjJw.jpeg"
-  }*/
   
 ]
+
+
+//Available to the user test te PUT and POST://
+{
+  "name": "Swift",
+  "fact": "Swift is supposed to combine the best parts of C and Objective C without compatibility constraints and provides new features.",
+"image": "https://miro.medium.com/max/750/1*OgeU8HPo8TFF1cZQ-4XjJw.jpeg"
+}
